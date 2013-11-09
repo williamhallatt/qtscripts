@@ -23,8 +23,15 @@
 # 
 #================================================================================
 
-# Script for buliding Qt 5.x.
-#
+# Script for buliding Qt 5.x. This script should be executed from within your Qt
+# source directory (where you cloned the repo).
+
+# Uncomment the following three commands if this is the first time you are building
+# Qt from source.  Remember to comment it out again for subsequent builds! :)
+# sudo apt-get install build-essential perl python git
+# sudo apt-get install "^libxcb.*" libx11-xcb-dev libglu1-mesa-dev libxrender-dev
+# ./init-repository
+
 # Clean the repo VERY thoroughly.
 git submodule foreach --recursive "git clean -dfx"
 
