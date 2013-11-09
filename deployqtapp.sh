@@ -176,5 +176,5 @@ echo "Creating tarball..."
 tar -zcvf $tardir".tar" $tardir
 
 echo "Cleaning up..."
-#rm -rf $tardir
+rm -rf $tardir
 echo "Done!"
