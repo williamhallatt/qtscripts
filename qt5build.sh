@@ -32,6 +32,8 @@
 # sudo apt-get install "^libxcb.*" libx11-xcb-dev libglu1-mesa-dev libxrender-dev
 # ./init-repository
 
+make clean
+
 # Clean the repo VERY thoroughly.
 git submodule foreach --recursive "git clean -dfx"
 
@@ -40,10 +42,18 @@ git pull
 git submodule sync
 git submodule update --recursive
 
-# Reconfigure Qt.
+# Reconfigure Qt for developer build.
 ./configure -developer-build -opensource -nomake examples -nomake tests -no-gtkstyle -confirm-license
 
-# Make the magic happen.
-make -j 4
-make docs
+# Reconfigure Qt for release.
+#./configure -opensource -warnings-are-errors -no-compile-examples -nomake tests -no-gtkstyle -confirm-license
 
+# Make the magic happen.
+make 
+
+# For release builds you need to install.
+# make install
+
+# Update documentation.
+make docs
+make install_docs
