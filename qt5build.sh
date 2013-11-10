@@ -52,8 +52,8 @@ git submodule update --recursive
 make 
 
 # For release builds you need to install.
-# make install
+# sudo make install
 
 # Update documentation.
 make docs
-make install_docs
+sudo make install_docs
