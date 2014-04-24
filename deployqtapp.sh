@@ -172,6 +172,29 @@ echo "./$executable" >> $execscript
 # Make executable.
 chmod u+x $execscript
 
+# Create a README
+echo "Creating README..."
+
+readme=$tardir/README
+echo "================================================================================" >> $readme
+echo "Please launch $executable via" >> $readme
+echo "" >> $readme
+echo "                 $execscript" >> $readme
+echo "" >> $readme
+echo "If you run into any trouble regarding dependencies, all you need to do is to" >> $readme
+echo "run " >> $readme
+echo "                 $fixscript " >> $readme
+echo "" >> $readme
+echo "in order to automatically resolve dependencies on your behalf " >> $readme
+echo "(note that you will need administrator privileges for this as this script will" >> $readme
+echo "download the necessary libraries for your platform). " >> $readme
+echo "" >> $readme
+echo "Should you wish to contact me for whatever reason, please do so via:" >> $readme
+echo "" >> $readme
+echo "                 <http://www.goblincoding.com/contact>" >> $readme
+echo "" >> $readme
+echo "================================================================================" >> $readme
+
 echo "Creating tarball..."
 tar -zcvf $tardir".tar" $tardir
 
